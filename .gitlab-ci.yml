@@ -11,7 +11,7 @@ training:
 
 pages:
   image: debian:sid
-  stage: deploy-pages
+  stage: deploy
   script:
     - apt-get update && apt-get install -y pandoc
     - mkdir public

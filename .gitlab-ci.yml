@@ -7,7 +7,7 @@ training:
     - make all
   artifacts:
     paths:
-      - */*.pdf
+      - crafting_unit_tests/*.pdf
 
 pages:
   image: debian:sid

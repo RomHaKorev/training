@@ -8,7 +8,7 @@ training:
     - make all
   artifacts:
     paths:
-      - crafting_unit_tests/*.pdf
+      - crafting*/*.pdf
 
 #pages:
 #  stage: deploy

@@ -1,0 +1,69 @@
+\begin{frame}{Test strategy}
+  \begin{center}
+  \begin{tikzpicture}
+    \etoepart
+    \integpart
+    \unitpart
+    \node at($ (etoe.center) + (-1.4, 0)$)  {10};
+    \node at($ (integ.center) + (-2.5, 0)$) {100};
+    \node at($ (unit.center) + (-3.6, 0)$)  {10000};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \center {\Huge{Everyone do Unit Tests !}}
+
+  \note{Aujourd’hui rares sont les gens qui ne font pas de TU.}
+\end{frame}
+
+
+\begin{frame}{Test strategy}
+  \begin{center}
+  \begin{tikzpicture}
+    \etoepart
+    \integpart
+    \unitpart
+    \draw[ultra thick,line cap=round] (-2,3.9) -- (8,3.9);
+    \node at(6.5,4.3) {\textbf{Functional}};
+    \node at(6.5,3.5) {\textbf{Technical}};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Test strategy}
+  \begin{center}
+  \begin{tikzpicture}
+    \etoepart
+    \integpart
+    \unitpart
+    \draw[ultra thick,line cap=round] (1,-0.5) -- (3,6.5);
+    \node at(4.5,6) {\textbf{Functional}};
+    \node at(1.4,6) {\textbf{Technical}};
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Test strategy}
+  \begin{center}
+  \begin{tikzpicture}
+    \etoepart
+    \integpart
+    \unitpart
+
+    \begin{scope}
+      \clip (0, 0) rectangle (6,1.8);
+      \clip (6,-0.5) -- (1,-0.5) -- (3,6.5) -- (6,6.5) -- cycle;
+      \fill[alert_color!20!white ] (0,0) -- (6,0) -- (3,6) -- cycle;
+      \node (unit) at (3,0.5) {Unit};
+    \end{scope}
+
+    \node at(4.5,6) {\textbf{Functional}};
+    \node at(1.4,6) {\textbf{Technical}};
+    \draw[ultra thick,line cap=round] (1,-0.5) -- (3,6.5);
+  \end{tikzpicture}
+  \end{center}
+\end{frame}

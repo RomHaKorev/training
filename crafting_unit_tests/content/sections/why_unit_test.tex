@@ -1,0 +1,122 @@
+\newcommand{\withmedal}[1]{
+  \center{ \Large #1} \\[5mm]
+  \hfill \includegraphics[width=1.5cm]{images/medal}
+}
+
+
+\begin{frame}
+  \center {\huge{F.i.r.s.t. of all, why are we unit testing ? }}
+
+  \note{Faire le tour des gens.}
+\end{frame}
+
+
+\begin{frame}{Our daily work is about \alert{creating value}}
+  \begin{enumerate}
+    \item Driven by the domain
+    \item Alive
+    \item Scalable
+    \item Explain with business rules
+    \begin{itemize}
+      \item May be Ambiguous / not clear
+      \item May be Contradictory
+      \item \cancelsnake{May} will change
+    \end{itemize}
+  \end{enumerate}
+
+  \note{
+    Scalable -> évolutive. Le point important est que notre appli doit être évolutive.
+  }
+\end{frame}
+
+
+\begin{frame}
+  \begin{quote}{}
+    Never change A RUNNING SYSTEM !!!
+
+    \begin{flushright}
+      \tiny{---A genious}
+    \end{flushright}
+  \end{quote}
+\end{frame}
+
+
+\begin{frame}
+  \begin{quote}{}
+    Intelligence is the ability to adapt to changes.
+
+    \begin{flushright}
+      \tiny{---Stephen Hawking}
+    \end{flushright}
+  \end{quote}
+\end{frame}
+
+
+\begin{frame}
+  \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[height=\paperheight]{images/brucelee}};
+
+  \huge{BE WATER MY FRIEND !}
+\end{frame}
+
+
+\begin{frame}
+  \withmedal{To be able to change}
+\end{frame}
+
+
+\begin{frame}{Our daily work is about \alert{writing code}}
+  \begin{enumerate}
+    \item Driven by the domain
+    \item Alive
+    \item Scalable
+    \item Testable
+    \item Always working
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Adding a feature}
+  \begin{enumerate}
+    \item Write a failing test
+    \item Make this test passed
+    \item Refactor
+    \item Ensure you did not broke anything by executing tests
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+  \withmedal{To always be working by being testable}
+\end{frame}
+
+
+\begin{frame}{Our daily work is about \alert{documenting}}
+  \begin{enumerate}
+    \item Driven by the domain
+    \item Explicit things
+    \item Helper to take good decisions
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
+   Did you change the rule the failing test verify ?
+
+   \sample{testcode_fragile}
+
+   You will change test code.
+\end{frame}
+
+
+\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
+   Did you change the rule the failing test verify ?
+
+   \sample{testcode_stable}
+
+   You will change production code.
+\end{frame}
+
+
+\begin{frame}
+  \withmedal{To make behaviors sharable / readable}
+\end{frame}

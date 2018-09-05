@@ -1,0 +1,59 @@
+\newcommand\drawsystem{
+\begin{scope}
+  [
+    link/.style = {
+      Latex[round]-Latex[round],
+      thick,
+      shorten <=1mm,
+      shorten >=1mm
+    },
+    application/.style = {
+      rectangle,
+      rounded corners=1mm,
+      draw=blue!50,
+      fill=blue!20,
+      thin,
+      minimum width=2cm,
+      minimum height=1cm,
+    },
+    db/.style = {
+      cylinder,
+      shape border rotate=90,
+      draw=blue!50,
+      fill=blue!20,
+      thin,
+      minimum width=1.5cm,
+    },
+    bus/.style = {
+      cylinder,
+      draw=blue!50,
+      fill=blue!20,
+      thin,
+      minimum height=1.5cm,
+    },
+    internet/.style = {
+      cloud,
+      draw=black!50,
+      fill=gray!20,
+      thin,
+      minimum width=1.5cm,
+      minimum height=0.75cm,
+    },
+  ]
+
+  \node[application] (frontend)                          {Frontend};
+  \node[application] (backend)  [below=of frontend]      {Backend};
+  \node[db]          (db)       [below left=of backend]  {DB};
+  \node[db]          (fs)       [below right=of backend] {Files};
+  \node[bus]         (bus)      [left=of backend]        {Bus};
+  \node[internet]    (internet) [right=of backend]       {};
+  \node[application] (partners) [right=of internet]      {Partners};
+
+  \draw [link] (frontend) -- (backend);
+  \draw [link] (backend) -- (db);
+  \draw [link] (backend) -- (fs);
+  \draw [link] (backend) -- (bus);
+  \draw [link] (backend) -- (internet);
+  \draw [link] (internet) -- (partners);
+\end{scope}
+}

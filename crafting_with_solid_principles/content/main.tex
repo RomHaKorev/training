@@ -1,0 +1,168 @@
+\usejava
+
+
+\title{Crafting with SOLID principles}
+\subtitle{a step to be a craftsman}
+\author{
+  Olivier Albiez \texttt{<oalbiez@azae.net>} \\
+  Yann Danot \texttt{<yann@arolla.fr>}
+}
+\date{}
+
+
+\begin{document}
+
+
+\frame{\titlepage}
+
+
+\begin{frame}{SOLID principles}
+  \begin{center}
+    \Huge{ \textcolor{red}{S}.O.L.I.D. }
+
+    \Large{ \textcolor{red}{Single Responsibility} Principle }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Single Responsibility - Definition}
+  \twocolumns{
+    \center \includegraphics[width=0.3\textwidth]{images/swiss-army-knife}
+  }{
+    \center \includegraphics[width=0.3\textwidth]{images/toolbox}
+  }
+
+  \center \large {An artefact should have one and only one reason to change,
+  meaning that an artefact should have only one job.}
+\end{frame}
+
+
+\begin{frame}{Single Responsibility - Sample}
+  \sample{1-s}
+\end{frame}
+
+
+\begin{frame}{Single Responsibility - Smells}
+  \begin{itemize}
+    \item Large Class
+    \item Long Method
+    \item Lot of methods
+    \item High Coupling/Low cohesion
+    \item Helper class
+    \item Multiple functional/technical concepts at the same
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{SOLID principles}
+  \begin{center}
+    \Huge{ S.\textcolor{red}{O}.L.I.D. }
+
+    \Large{ \textcolor{red}{Open / Close} Principle }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Open / Close - Definition}
+  \center \includegraphics[width=0.3\textwidth]{images/television}
+
+  \center \large {Objects or entities should be open for extension, but closed for modification.}
+\end{frame}
+
+
+\begin{frame}{Open / Close}
+  \sample{2-o}
+\end{frame}
+
+
+\begin{frame}{Open / Close - Smells}
+  \begin{itemize}
+    \item Complex switch/Lot of ifs
+    \item High cyclomatic complexity
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{SOLID principles}
+  \begin{center}
+    \Huge{ S.O.\textcolor{red}{L}.I.D. }
+
+    \Large{ \textcolor{red}{Liskov Substitution} Principle }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Liskov Substitution - Definition}
+  \center \large {Every subclass/derived class should be substitutable for their base/parent class.}
+\end{frame}
+
+
+\begin{frame}{Liskov Substitution}
+  \sample{3-l}
+\end{frame}
+
+
+\begin{frame}{Liskov Substitution - Smells}
+  \begin{itemize}
+    \item You have to check for the type provided (e.g. instanceof)
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{SOLID principles}
+  \begin{center}
+    \Huge{ S.O.L.\textcolor{red}{I}.D. }
+
+    \Large{ \textcolor{red}{Interface Segregation} Principle }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Interface Segregation - Definition}
+  \center \large {A client should never be forced to implement an interface that it doesn’t use or clients shouldn’t be forced to depend on methods they do not use.}
+\end{frame}
+
+
+\begin{frame}{Interface Segregation}
+  \sample{4-i}
+\end{frame}
+
+
+\begin{frame}{Interface Segregation - Smells}
+  \begin{itemize}
+    \item Fat interface/Class with lot of methods
+    \item Interface has multiple responsibilities
+    \item Difficulties to expose a subset of responsibilities
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{SOLID principles}
+  \begin{center}
+    \Huge{ S.O.L.I.\textcolor{red}{D}. }
+
+    \Large{ \textcolor{red}{Dependency Inversion} Principle }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Dependency Inversion - Definition}
+  \center \large {Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.}
+\end{frame}
+
+
+\begin{frame}{Dependency Inversion}
+  \sample{5-d}
+\end{frame}
+
+
+\begin{frame}{Dependency Inversion - Smells}
+  \begin{itemize}
+    \item Dependencies between classes (vs interface)
+    \item Monolithic architecture
+    \item Abstraction depends on details/implementation
+  \end{itemize}
+\end{frame}
+
+
+\end{document}

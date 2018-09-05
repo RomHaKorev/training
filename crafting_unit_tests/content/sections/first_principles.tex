@@ -1,0 +1,59 @@
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{
+      \alert<2>{F}.\alert<3>{I}.\alert<4>{R}.\alert<5>{S}.\alert<6>{T}
+    }
+
+    \Large{
+      \only<1>{}
+      \only<2>{\alert{Fast}}
+      \only<3>{\alert{Independent / Isolated}}
+      \only<4>{\alert{Repetable}}
+      \only<5>{\alert{Self-validating}}
+      \only<6>{\alert{Timely / Thorough}}
+    }
+  \end{center}
+
+  \note<2>{
+    \begin{itemize}
+      \item A developer should not hesitate to run the tests as they are slow.
+      \item All of these including setup, the actual test and tear down should execute really fast (milliseconds) as you may have thousands of tests in your entire project.
+    \end{itemize}
+  }
+  \note<3>{
+    \begin{itemize}
+      \item No order-of-run dependency. They should pass or fail the same way in suite or when run individually.
+      \item Should be launched “offline” ( without network) without any problems.
+    \end{itemize}
+  }
+  \note<4>{
+    \begin{itemize}
+      \item A test method should NOT depend on any data in the environment/instance in which it is running.
+      \item Deterministic results - should yield the same results every time and at every location where they run.
+      \item No dependency on date/time or random functions output.
+      \item Each test should setup or arrange it's own data.
+    \end{itemize}
+  }
+  \note<5>{
+    \begin{itemize}
+      \item No manual inspection required to check whether the test has passed or failed.
+    \end{itemize}
+  }
+  \note<6>{
+    \begin{itemize}
+      \item Should cover every use case scenario and NOT just aim for 100% coverage.
+      \item Written about the same time as code under test (with TDD, written first!)
+      \item Timely => opportun THOROUGH => approfondi
+    \end{itemize}
+  }
+\end{frame}
+
+
+\begin{frame}[fragile]{F.I.R.S.T. ?}
+  \sample{first_sample_1}
+
+
+  \note{
+    Il ne respecte pas l’indépendance puisqu’il fait référence à la date du jour et n’est pas repeatable non plus.
+  }
+\end{frame}

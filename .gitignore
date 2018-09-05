@@ -1,0 +1,16 @@
+*~
+*.swp
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.fls
+*.fdb_latexmk
+*.vrb
+_minted-*/
+crafting*/fonts
+crafting*/images/*.pdf
+crafting*/*.pdf
+/.texlive*

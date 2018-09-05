@@ -1,0 +1,17 @@
+
+\newcommand\twocolumns[3]{
+  \FPeval{\leftsize}{#1}
+  \FPeval{\rightsize}{1 - #1}
+
+  \begin{columns}
+    \begin{column}{\leftsize\textwidth}
+      #2
+    \end{column}
+    \begin{column}{\rightsize\textwidth}
+      #3
+    \end{column}
+  \end{columns}
+}
+
+\newcommand{\singleimage}[2][\textwidth]{ \center \includegraphics[width=#1]{#2} }
+\newcommand{\singletext}[1]{ \center{ \Large #1} }

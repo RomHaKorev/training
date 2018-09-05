@@ -1,0 +1,84 @@
+\ProvidesFile{crafting}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[no-math]{fontspec}
+\usepackage{fp}
+\usepackage{pgfpages}
+
+
+% == beamer configuration
+\usetheme[progressbar=foot,block=fill,background=light]{metropolis}
+\setsansfont[Path=./fonts/,UprightFont = *-Regular]{PermanentMarker}
+\definecolor{alert_color}{RGB}{209,130,112}
+\setbeamercolor{alerted text}{fg=alert_color}
+
+%\usetheme{Copenhagen}
+%\usecolortheme{fly}
+
+% == tikz configuration
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  decorations.pathmorphing,
+  fit,
+  positioning,
+  shadows,
+  shapes.geometric,
+  shapes.symbols,
+}
+
+
+% == minted configuration
+\usepackage{minted}
+
+\newcommand{\usejava}{
+  \newcommand{\samplelanguage}{java}
+  \newcommand{\samplepath}{java}
+  \newcommand{\sampleext}{java}
+}
+
+\newcommand{\usepython}{
+  \newcommand{\samplelanguage}{python}
+  \newcommand{\samplepath}{python}
+  \newcommand{\sampleext}{py}
+}
+
+\newcommand\sample[1]{
+  \inputminted[mathescape, autogobble, linenos, fontsize=\tiny, frame=single,breaklines]{\samplelanguage}{code/\samplepath/#1.\sampleext}
+}
+
+
+% == custom macros
+
+\newcommand\twocolumns[3][0.5]{
+  \FPeval{\leftsize}{#1}
+  \FPeval{\rightsize}{1 - #1}
+  \begin{columns}
+    \begin{column}{\leftsize\textwidth}
+      #2
+    \end{column}
+    \begin{column}{\rightsize\textwidth}
+      #3
+    \end{column}
+  \end{columns}
+}
+
+\newcommand{\singleimage}[2][\textwidth]{ \center \includegraphics[width=#1]{#2} }
+\newcommand{\singletext}[1]{ \center{ \Large #1} }
+
+\newcommand{\cancel}[1]{%
+    \tikz[baseline=(tocancel.base)]{
+        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+        \draw[alert_color,thick,line cap=round] (tocancel.south west) -- (tocancel.north east);
+        \draw[alert_color,thick,line cap=round] (tocancel.north west) -- (tocancel.south east);
+    }
+}
+
+\newcommand{\cancelsnake}[1]{%
+    \tikz[baseline=(tocancel.base),decoration={snake,amplitude=1},draw=alert_color,thick]{
+        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+        \draw[decorate] (tocancel.west) -- (tocancel.east);
+    }
+}

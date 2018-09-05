@@ -1,0 +1,23 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+training:
+  image: registry.gitlab.com/azae/outils/latex/gitlab
+  script:
+    - make all
+  artifacts:
+    paths:
+      - */*.pdf
+
+pages:
+  image: debian:sid
+  stage: deploy-pages
+  script:
+    - apt-get update && apt-get install -y pandoc
+    - mkdir public
+    - pandoc < README.md > public/index.html
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

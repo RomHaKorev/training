@@ -3,7 +3,7 @@ variables:
 
 training:
   stage: build
-  image: registry.gitlab.com/azae/outils/latex/gitlab
+  image: registry.gitlab.com/azae/outils/latex
   script:
     - make all
   artifacts:

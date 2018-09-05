@@ -10,15 +10,15 @@ training:
     paths:
       - crafting*/*.pdf
 
-#pages:
-#  stage: deploy
-#  image: debian:sid
-#  script:
-#    - apt-get update && apt-get install -y pandoc
-#    - mkdir public
-#    - pandoc < readme.md > public/index.html
-#  artifacts:
-#    paths:
-#    - public
-#  only:
-#  - master
+pages:
+ stage: deploy
+ image: debian:sid
+ script:
+   - apt-get update && apt-get install -y pandoc
+   - mkdir public
+   - pandoc < readme.md > public/index.html
+ artifacts:
+   paths:
+   - public
+ only:
+ - master

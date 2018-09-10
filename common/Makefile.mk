@@ -1,18 +1,23 @@
-COMMON_TEXFILES = $(wildcard ../common/tex/*.tex)
 COMMON_STYLES = $(wildcard ../common/styles/*.sty)
 COMMON_FONTFILES = $(wildcard ../common/fonts/*.ttf)
 
-LOCAL_TEXFILES = $(patsubst ../common/tex/%,%,$(COMMON_TEXFILES))
 LOCAL_STYLES = $(patsubst ../common/styles/%,%,$(COMMON_STYLES))
 LOCAL_FONTFILES = $(patsubst ../common/%,%,$(COMMON_FONTFILES))
-LOCAL_PDFFILES = $(patsubst %.tex,%.pdf,$(LOCAL_TEXFILES))
 LOCAL_IMAGES = $(patsubst %.svg,%.pdf,$(wildcard images/*.svg))
-LOCAL_FILES = .latexmkrc $(LOCAL_TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES)
+
+LANGUAGES = $(patsubst code/%,%,$(wildcard code/*))
+SLIDES = $(patsubst %,slides-%.tex,$(LANGUAGES))
+SLIDES_WITH_NOTES = $(patsubst %,slides-%-with-notes.tex,$(LANGUAGES))
+TEXFILES = $(SLIDES) $(SLIDES_WITH_NOTES)
+PDFFILES = $(patsubst %.tex,%.pdf,$(TEXFILES))
+
+CLEAN_FILES = .latexmkrc $(TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES)
 
 
 .PHONY: all clean images common
 
-all: images common $(LOCAL_PDFFILES)
+all: images common $(PDFFILES)
+	@echo $(TEXFILES)
 
 clean:
 	@latexmk -C -silent
@@ -20,7 +25,7 @@ clean:
 
 images: $(LOCAL_IMAGES)
 
-common: $(LOCAL_FILES)
+common: $(CLEAN_FILES)
 
 .latexmkrc: ../common/.latexmkrc
 	@cp $< $@

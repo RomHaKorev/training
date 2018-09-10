@@ -4,16 +4,16 @@ SUBDIRS = crafting_unit_tests \
 .PHONY: $(SUBDIRS) all common clean
 
 all:
-	for dir in $(SUBDIRS); do \
+	@for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir $@ ; \
 	done
 
 common:
-	for dir in $(SUBDIRS); do \
+	@for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir $@ ; \
 	done
 
 clean:
-	for dir in $(SUBDIRS); do \
+	@for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir $@ ; \
 	done

@@ -16,7 +16,7 @@ CLEAN_FILES = .latexmkrc $(TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES)
 
 .PHONY: all clean images common
 
-all: images common $(PDFFILES)
+all: common images $(PDFFILES)
 	@echo $(TEXFILES)
 
 clean:

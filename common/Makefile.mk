@@ -13,20 +13,18 @@ SLIDES_WITH_NOTES = $(patsubst %,slides-%-with-notes.tex,$(LANGUAGES))
 TEXFILES = $(SLIDES) $(SLIDES_WITH_NOTES)
 PDFFILES = $(patsubst %.tex,%.pdf,$(TEXFILES))
 
-CLEAN_FILES = .latexmkrc $(TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES)
+PREPARE_FILES = .latexmkrc $(TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES) $(LOCAL_COMMON_IMAGES)
 
 
-.PHONY: all clean images common
+.PHONY: all clean prepare
 
-all: common images $(PDFFILES)
+all: prepare $(PDFFILES)
 
 clean:
 	@latexmk -C -silent
-	@rm -rf _minted-* fonts $(LOCAL_IMAGES)
+	@rm -rf _minted-* fonts common $(LOCAL_IMAGES)
 
-images: $(LOCAL_IMAGES) $(LOCAL_COMMON_IMAGES)
-
-common: $(CLEAN_FILES)
+prepare: $(PREPARE_FILES) $(LOCAL_IMAGES)
 
 .latexmkrc: ../common/.latexmkrc
 	@cp $< $@

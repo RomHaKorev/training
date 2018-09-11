@@ -1,9 +1,11 @@
 COMMON_STYLES = $(wildcard ../common/styles/*.sty)
 COMMON_FONTFILES = $(wildcard ../common/fonts/*.ttf)
+COMMON_IMAGES = $(wildcard ../common/images/*)
 
 LOCAL_STYLES = $(patsubst ../common/styles/%,%,$(COMMON_STYLES))
 LOCAL_FONTFILES = $(patsubst ../common/%,%,$(COMMON_FONTFILES))
 LOCAL_IMAGES = $(patsubst %.svg,%.pdf,$(wildcard images/*.svg))
+LOCAL_COMMON_IMAGES = $(patsubst ../common/images/%,common/%,$(COMMON_IMAGES))
 
 LANGUAGES = $(patsubst code/%,%,$(wildcard code/*))
 SLIDES = $(patsubst %,slides-%.tex,$(LANGUAGES))
@@ -17,13 +19,12 @@ CLEAN_FILES = .latexmkrc $(TEXFILES) $(LOCAL_STYLES) $(LOCAL_FONTFILES)
 .PHONY: all clean images common
 
 all: common images $(PDFFILES)
-	@echo $(TEXFILES)
 
 clean:
 	@latexmk -C -silent
 	@rm -rf _minted-* fonts $(LOCAL_IMAGES)
 
-images: $(LOCAL_IMAGES)
+images: $(LOCAL_IMAGES) $(LOCAL_COMMON_IMAGES)
 
 common: $(CLEAN_FILES)
 
@@ -36,7 +37,7 @@ common: $(CLEAN_FILES)
 %.tex: ../common/tex/%.tex
 	@cp $< $@
 
-%.pdf: %.tex
+%.pdf: %.tex $(LOCAL_STYLES)
 	@latexmk -f $<
 
 %.pdf: %.svg
@@ -44,6 +45,10 @@ common: $(CLEAN_FILES)
 
 fonts/%.ttf: ../common/fonts/%.ttf
 	@mkdir -p fonts
+	@cp $< $@
+
+common/%: ../common/images/%
+	@mkdir -p common
 	@cp $< $@
 
 #find . -name "*.tex" -o -path "./code/*" -o -path "./style/*" |entr make clean pdf

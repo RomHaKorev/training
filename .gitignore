@@ -10,7 +10,8 @@
 *.fdb_latexmk
 *.vrb
 _minted-*/
+crafting*/*.pdf
+crafting*/common
 crafting*/fonts
 crafting*/images/*.pdf
-crafting*/*.pdf
 /.texlive*

@@ -19,7 +19,7 @@
 
 
 \begin{frame}{What about unit tests ?}
-  \singlequote{Wikipedia}{ 
+  \singlequote{Wikipedia}{
     In computer programming, unit testing is a software testing method by which individual \alert{units} of source \alert{code}, sets of one or more computer program \alert{modules} together with \alert{associated control data}, \alert{usage procedures}, and \alert{operating procedures}, are tested to determine whether they are fit for use.
   }
 \end{frame}
@@ -47,6 +47,15 @@
   \begin{center}
     \begin{tikzpicture}
       \drawsystem
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{What about unit tests ?}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
       \begin{scope}
         \foreach \x in {1,...,10} {
           \fill[alert_color] ($ (frontend) + (0.8*rand,0.4*rand) $) circle [radius=0.6mm,];
@@ -64,7 +73,7 @@
   \begin{center}
     \begin{tikzpicture}
       \drawsystem
-      \begin{scope}[decoration=snake,alert_color,thick]
+      \begin{scope}[decoration=snake,alert_color,ultra thick]
         \foreach \x in {-0.7,0,0.7} {
           \draw [decorate] ($ (frontend) + (\x,0.4) $) -- ($ (frontend) + (\x,-0.4) $);
           \draw [decorate] ($ (backend) + (\x,0.4) $) -- ($ (backend) + (\x,-0.4) $);
@@ -88,23 +97,29 @@
   \begin{center}
     \begin{tikzpicture}
       \drawsystem
-      \begin{scope}[thick,alert_color]
-        \node[circle,draw,fit=(backend.north) (frontend.south)] {};
-        \node[circle,draw,fit=(backend.south) (db.north)] {};
-      \end{scope}
     \end{tikzpicture}
   \end{center}
 \end{frame}
+
 
 \begin{frame}{What about unit tests ?}
   \begin{center}
     \begin{tikzpicture}
       \drawsystem
-      \begin{scope}[thick,alert_color]
-        \node[ellipse,draw,rotate fit=40,fit=(backend.center) (db)] {};
-        \node[ellipse,draw,fit=(backend.center) (bus)] {};
-        \node[ellipse,draw,fit=(backend.center) (partners)] {};
-        \node[circle,draw,fit=(backend.center) (frontend.center) (bus.center)] {};
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
+        \draw [decorate] (backend.north) -- (db.center) ;
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{What about unit tests ?}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
+        \draw [decorate] (frontend.70) -- (backend.100) -- (bus.center) ;
       \end{scope}
     \end{tikzpicture}
   \end{center}
@@ -124,7 +139,41 @@
   \begin{center}
     \begin{tikzpicture}
       \drawsystem
-      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,thick]
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{What about unit tests ?}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
+        \draw [decorate] (frontend.130) -- (backend.222) -- (db.center) ;
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{What about unit tests ?}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
+        \draw [decorate] (frontend.130) -- (backend.222) -- (db.center) ;
+        \draw [decorate] (frontend.north) -- (backend.center) -- (fs.center) ;
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{What about unit tests ?}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
         \draw [decorate] (frontend.130) -- (backend.222) -- (db.center) ;
         \draw [decorate] (frontend.north) -- (backend.center) -- (fs.center) ;
         \draw [decorate] (bus.center) -- (backend.west) -- (db.center) ;

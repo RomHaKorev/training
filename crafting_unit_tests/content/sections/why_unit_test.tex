@@ -5,7 +5,7 @@
 
 
 \begin{frame}
-  \center {\huge{F.i.r.s.t. of all, why are we unit testing ? }}
+  \center {\huge{Why are we unit testing ? }}
 
   \note{Faire le tour des gens.}
 \end{frame}
@@ -34,18 +34,15 @@
   \singlequote{A genious}{Never change A RUNNING SYSTEM !!!}
 \end{frame}
 
-
-\begin{frame}
-  \singlequote{Stephen Hawking}{
-    Intelligence is the ability to adapt to changes.
-  }
-\end{frame}
-
-
 \begin{frame}
   \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[height=\paperheight]{images/brucelee}};
 
   \huge{BE WATER MY FRIEND !}
+\end{frame}
+
+
+\begin{frame}
+  \singlequote{Stephen Hawking}{ Intelligence is the ability to adapt to changes. }
 \end{frame}
 
 
@@ -105,6 +102,25 @@
 
    You will change production code.
 \end{frame}
+
+
+\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
+  \begin{itemize}
+    \item The new rule is \alert{changing} the tested \alert{behavior}
+    \begin{itemize}
+      \item [=>] You have to \alert{change test code}
+    \end{itemize}
+    \item The broken behavior is \alert{still relevant}
+    \begin{itemize}
+      \item [=>] You need to keep this behavior by \alert{fixing production / test code}
+    \end{itemize}
+    \item Any doubt ?
+    \begin{itemize}
+      \item [=>] \alert{Share} with “domain experts”
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
 
 
 \begin{frame}

@@ -1,8 +1,19 @@
 \title{Crafting Unit Tests}
-\author{
-  Olivier Albiez \texttt{<oalbiez@azae.net>} \\
-  Yann Danot \texttt{<yann@arolla.fr>}
+%\author{
+%  Olivier Albiez \texttt{@OlivierAlbiez} \\
+%  Yann Danot \texttt{@ydannot}
+%}
+
+
+\newcommand{\punchline}[2]{%
+  \begin{quote}{\includegraphics[width=0.8cm]{common/quote}}
+    #2
+    \begin{flushright}
+      \tiny{---#1}
+    \end{flushright}
+  \end{quote}
 }
+
 
 \input{content/pyramid.tex}
 \input{content/system.tex}
@@ -17,10 +28,14 @@
 %– Apprendre à écrire des vrais tests unitaires (TU)
 %– Ecrire des tests lisibles et maintenables
 
+\section{Definitions}
 \input{content/sections/definitions}
+\section{Test strategy}
 \input{content/sections/test_strategy}
-\input{content/sections/first_principles}
+\section{Why}
 \input{content/sections/why_unit_test}
+\section{Good practices}
+\input{content/sections/first_principles}
 \input{content/sections/good_unit_test}
 \input{content/sections/test_doubles}
 

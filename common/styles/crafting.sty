@@ -8,8 +8,19 @@
 
 
 % == beamer configuration
-\usetheme[progressbar=foot,block=fill,background=light]{metropolis}
+\usetheme[progressbar=foot,background=light]{metropolis}
+
+\newfontfamily\PermanentMarker[Path=./fonts/,UprightFont = *-Regular]{PermanentMarker}
+\newfontfamily\Sedgwick[Path=./fonts/,UprightFont = *-Regular]{SedgwickAveDisplay}
+
 \setsansfont[Path=./fonts/,UprightFont = *-Regular]{PermanentMarker}
+\setbeamerfont{title}{size=\huge, series=\Sedgwick}
+\setbeamerfont*{subtitle}{size=\large, series=\Sedgwick}
+\definecolor{subtitle_color}{RGB}{173,173,173}
+\setbeamercolor{subtitle}{fg=subtitle_color}
+
+
+
 \definecolor{alert_color}{RGB}{209,130,112}
 \setbeamercolor{alerted text}{fg=alert_color}
 \setbeamertemplate{frame footer}{\includegraphics[height=0.15cm]{common/by-sa}}

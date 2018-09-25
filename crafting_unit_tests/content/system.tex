@@ -39,9 +39,11 @@
       minimum width=1.5cm,
       minimum height=0.75cm,
     },
+    background/.style={fill=white, draw=gray!20!white, very thin, inner sep=1em},
   ]
 
-  \node[application] (frontend)                          {Frontend};
+  \fill[background] (-2.5, -0.25) rectangle (8.5, 6.25);
+  \node at (1.5, 5.25) [application] (frontend)                          {Frontend};
   \node[application] (backend)  [below=of frontend]      {Backend};
   \node[db]          (db)       [below left=of backend]  {DB};
   \node[db]          (fs)       [below right=of backend] {Files};

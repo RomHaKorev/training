@@ -1,6 +1,7 @@
 \begin{frame}{Test strategy}
   \begin{center}
   \begin{tikzpicture}
+    \cadre
     \etoepart
     \integpart
     \unitpart
@@ -22,6 +23,7 @@
 \begin{frame}{Test strategy}
   \begin{center}
   \begin{tikzpicture}
+    \cadre
     \etoepart
     \integpart
     \unitpart
@@ -36,10 +38,11 @@
 \begin{frame}{Test strategy}
   \begin{center}
   \begin{tikzpicture}
+    \cadre
     \etoepart
     \integpart
     \unitpart
-    \draw[ultra thick,line cap=round] (1,-0.5) -- (3,6.5);
+    \draw[ultra thick,line cap=round] (1,-0.3) -- (3,6.3);
     \node at(4.5,6) {\textbf{Functional}};
     \node at(1.4,6) {\textbf{Technical}};
   \end{tikzpicture}
@@ -50,20 +53,21 @@
 \begin{frame}{Test strategy}
   \begin{center}
   \begin{tikzpicture}
+    \cadre
     \etoepart
     \integpart
     \unitpart
 
     \begin{scope}
       \clip (0, 0) rectangle (6,1.8);
-      \clip (6,-0.5) -- (1,-0.5) -- (3,6.5) -- (6,6.5) -- cycle;
+      \clip (6,-0.3) -- (1,-0.3) -- (3,6.3) -- (6,6.3) -- cycle;
       \fill[alert_color!20!white ] (0,0) -- (6,0) -- (3,6) -- cycle;
       \node (unit) at (3,0.5) {Unit};
     \end{scope}
 
     \node at(4.5,6) {\textbf{Functional}};
     \node at(1.4,6) {\textbf{Technical}};
-    \draw[ultra thick,line cap=round] (1,-0.5) -- (3,6.5);
+    \draw[ultra thick,line cap=round] (1,-0.3) -- (3,6.3);
   \end{tikzpicture}
   \end{center}
 \end{frame}

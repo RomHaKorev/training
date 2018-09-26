@@ -1,32 +1,52 @@
 \begin{frame}{First principles}
   \begin{center}
-    \Huge{
-      \alert<2>{F}.\alert<3>{I}.\alert<4>{R}.\alert<5>{S}.\alert<6>{T}.
-    }
+    \Huge{ F.I.R.S.T. }
 
-    \Large{
-      \only<1>{Princpiples}
-      \only<2>{\alert{Fast}}
-      \only<3>{\alert{Independent / Isolated}}
-      \only<4>{\alert{Repetable}}
-      \only<5>{\alert{Self-validating}}
-      \only<6>{\alert{Timely / Thorough}}
-    }
+    \Large{ Princpiples }
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{ \alert{F}.I.R.S.T. }
+
+    \Large{ \alert{Fast} }
   \end{center}
 
-  \note<2>{
+  \note{
     \begin{itemize}
       \item A developer should not hesitate to run the tests as they are slow.
       \item All of these including setup, the actual test and tear down should execute really fast (milliseconds) as you may have thousands of tests in your entire project.
     \end{itemize}
   }
-  \note<3>{
+\end{frame}
+
+
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{ F.\alert{I}.R.S.T. }
+
+    \Large{ \alert{Independent / Isolated} }
+  \end{center}
+
+  \note{
     \begin{itemize}
       \item No order-of-run dependency. They should pass or fail the same way in suite or when run individually.
       \item Should be launched “offline” ( without network) without any problems.
     \end{itemize}
   }
-  \note<4>{
+\end{frame}
+
+
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{ F.I.\alert{R}.S.T. }
+
+    \Large{ \alert{Repetable} }
+  \end{center}
+
+  \note{
     \begin{itemize}
       \item A test method should NOT depend on any data in the environment/instance in which it is running.
       \item Deterministic results - should yield the same results every time and at every location where they run.
@@ -34,12 +54,32 @@
       \item Each test should setup or arrange it's own data.
     \end{itemize}
   }
-  \note<5>{
+\end{frame}
+
+
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{ F.I.R.\alert{S}.T. }
+
+    \Large{ \alert{Self-validating} }
+  \end{center}
+
+  \note{
     \begin{itemize}
       \item No manual inspection required to check whether the test has passed or failed.
     \end{itemize}
   }
-  \note<6>{
+\end{frame}
+
+
+\begin{frame}{First principles}
+  \begin{center}
+    \Huge{ F.I.R.S.\alert{T}. }
+
+    \Large{ \alert{Timely / Thorough} }
+  \end{center}
+
+  \note{
     \begin{itemize}
       \item Should cover every use case scenario and NOT just aim for 100% coverage.
       \item Written about the same time as code under test (with TDD, written first!)

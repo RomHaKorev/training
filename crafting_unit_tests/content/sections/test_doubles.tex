@@ -1,28 +1,37 @@
 \subsection{Test doubles}
 
 
-\begin{frame}{Test doubles - Dummy}
-  An object without implementation not used within the \alert{SUT}.
+\begin{frame}{Dummy}
+  An object without implementation not used within the SUT.
+\end{frame}
 
+
+\begin{frame}{Dummy}
   \sample{testdouble_dummy}
 \end{frame}
 
 
-\begin{frame}{Test doubles - Stub}
+\begin{frame}{Stub}
   A test-specific object that feeds the desired indirect inputs into the SUT.
+\end{frame}
 
+
+\begin{frame}{Stub}
   \sample{testdouble_stub}
 \end{frame}
 
 
-\begin{frame}{Test doubles - Spy}
+\begin{frame}{Spy}
   An observation point for the indirect outputs of the SUT.
+\end{frame}
 
+
+\begin{frame}{Spy}
   \sample{testdouble_spy}
 \end{frame}
 
 
-\begin{frame}{Test doubles - Mock}
+\begin{frame}{Mock}
   \begin{itemize}
     \item Special case objects that mimic real objects for testing,
     \item more capable version of a Test Stub,
@@ -32,12 +41,12 @@
 \end{frame}
 
 
-\begin{frame}{Test doubles - Mock}
+\begin{frame}{Mock}
   \sample{testdouble_mock}
 \end{frame}
 
 
-\begin{frame}{Test doubles - Fake}
+\begin{frame}{Fake}
   \begin{itemize}
     \item We need to do Behavior Verification to avoid having an Untested Requirement,
     \item inability to observe side-effects of invoking methods on the SUT,
@@ -46,6 +55,6 @@
 \end{frame}
 
 
-\begin{frame}{Test doubles - Fake}
+\begin{frame}{Fake}
   \sample{testdouble_fake}
 \end{frame}

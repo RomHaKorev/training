@@ -60,8 +60,8 @@
   \newcommand{\sampleext}{py}
 }
 
-\newcommand\sample[1]{
-  \inputminted[mathescape, autogobble, linenos, fontsize=\tiny, frame=single,breaklines]{\samplelanguage}{code/\samplepath/#1.\sampleext}
+\newcommand\sample[2][7]{
+  \inputminted[mathescape, autogobble, linenos, fontsize=\fontsize{#1}{#1}\selectfont, frame=single]{\samplelanguage}{code/\samplepath/#2.\sampleext}
 }
 
 

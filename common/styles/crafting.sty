@@ -10,10 +10,10 @@
 % == beamer configuration
 \usetheme[progressbar=foot,background=light,sectionpage=progressbar,subsectionpage=progressbar]{metropolis}
 
-\newfontfamily\PermanentMarker[Path=./fonts/,UprightFont = *-Regular]{PermanentMarker}
-\newfontfamily\Sedgwick[Path=./fonts/,UprightFont = *-Regular]{SedgwickAveDisplay}
+\newfontfamily\PermanentMarker[Path=./common/fonts/,UprightFont = *-Regular]{PermanentMarker}
+\newfontfamily\Sedgwick[Path=./common/fonts/,UprightFont = *-Regular]{SedgwickAveDisplay}
 
-\setsansfont[Path=./fonts/,UprightFont = *-Regular]{PermanentMarker}
+\setsansfont[Path=./common/fonts/,UprightFont = *-Regular]{PermanentMarker}
 
 \setbeamerfont{title}{size=\huge, series=\Sedgwick}
 \setbeamerfont*{subtitle}{size=\large, series=\Sedgwick}
@@ -24,7 +24,7 @@
 
 \definecolor{alert_color}{RGB}{209,130,112}
 \setbeamercolor{alerted text}{fg=alert_color}
-\setbeamertemplate{frame footer}{\includegraphics[height=0.15cm]{common/by-sa}}
+\setbeamertemplate{frame footer}{\includegraphics[height=0.15cm]{common/images/by-sa}}
 \subtitle{a step to be a craftsman}
 \date{}
 
@@ -99,7 +99,16 @@
 }
 
 \newcommand{\singlequote}[2]{%
-  \begin{quote}{\includegraphics[width=0.8cm]{common/quote}}
+  \begin{quote}{\includegraphics[width=0.8cm]{common/images/quote}}
+    #2
+    \begin{flushright}
+      \tiny{---#1}
+    \end{flushright}
+  \end{quote}
+}
+
+\newcommand{\punchline}[2]{%
+  \begin{quote}{\includegraphics[width=0.8cm]{common/images/quote}}
     #2
     \begin{flushright}
       \tiny{---#1}

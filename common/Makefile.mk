@@ -2,10 +2,10 @@ COMMON_STYLES = $(wildcard ../common/styles/*.sty)
 COMMON_FONTFILES = $(wildcard ../common/fonts/*.ttf)
 COMMON_IMAGES = $(wildcard ../common/images/*)
 
-LOCAL_STYLES = $(patsubst ../common/styles/%,%,$(COMMON_STYLES))
-LOCAL_FONTFILES = $(patsubst ../common/%,%,$(COMMON_FONTFILES))
+LOCAL_STYLES = $(patsubst ../common/%,common/%,$(COMMON_STYLES))
+LOCAL_FONTFILES = $(patsubst ../common/%,common/%,$(COMMON_FONTFILES))
 LOCAL_IMAGES = $(patsubst %.svg,%.pdf,$(wildcard images/*.svg))
-LOCAL_COMMON_IMAGES = $(patsubst ../common/images/%,common/%,$(COMMON_IMAGES))
+LOCAL_COMMON_IMAGES = $(patsubst ../common/%,common/%,$(COMMON_IMAGES))
 
 LANGUAGES = $(patsubst code/%,%,$(wildcard code/*))
 SLIDES = $(patsubst %,slides-%.tex,$(LANGUAGES))
@@ -22,7 +22,7 @@ all: prepare $(PDFFILES)
 
 clean:
 	@latexmk -C -silent
-	@rm -rf _minted-* fonts common $(LOCAL_IMAGES)
+	@rm -rf _minted-* common $(LOCAL_IMAGES)
 
 prepare: $(PREPARE_FILES) $(LOCAL_IMAGES)
 
@@ -41,12 +41,16 @@ prepare: $(PREPARE_FILES) $(LOCAL_IMAGES)
 %.pdf: %.svg
 	@inkscape -f $< --export-pdf=$@
 
-fonts/%.ttf: ../common/fonts/%.ttf
-	@mkdir -p fonts
+common/styles/%.sty: ../common/styles/%.sty
+	@mkdir -p common/styles
 	@cp $< $@
 
-common/%: ../common/images/%
-	@mkdir -p common
+common/fonts/%.ttf: ../common/fonts/%.ttf
+	@mkdir -p common/fonts
+	@cp $< $@
+
+common/images/%: ../common/images/%
+	@mkdir -p common/images
 	@cp $< $@
 
 #find . -name "*.tex" -o -path "./code/*" -o -path "./style/*" |entr make clean pdf

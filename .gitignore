@@ -12,6 +12,5 @@
 _minted-*/
 crafting*/*.pdf
 crafting*/common
-crafting*/fonts
 crafting*/images/*.pdf
 /.texlive*

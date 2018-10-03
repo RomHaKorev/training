@@ -83,6 +83,12 @@
 \newcommand{\singleimage}[2][\textwidth]{ \center \includegraphics[width=#1]{#2} }
 \newcommand{\singletext}[1]{ \center{ \Large #1} }
 
+\newcommand{\sticker}[2][5]{%
+    \tikz[baseline=(tocancel.base)]{
+        \node[inner sep=0pt,outer sep=0pt,rotate=#1] (tocancel) {#2};
+    }
+}
+
 \newcommand{\cancel}[1]{%
     \tikz[baseline=(tocancel.base)]{
         \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};

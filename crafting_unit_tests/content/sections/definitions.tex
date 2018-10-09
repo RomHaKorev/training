@@ -109,6 +109,21 @@
     \begin{tikzpicture}
       \drawsystem
       \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
+        \draw [decorate] (frontend) -- (backend) ;
+        \draw [decorate] (bus) -- (backend) ;
+        \draw [decorate] (db) -- (backend) ;
+        \draw [decorate] (partners) -- (backend) ;
+      \end{scope}
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Integration tests}
+  \begin{center}
+    \begin{tikzpicture}
+      \drawsystem
+      \begin{scope}[decoration={snake,amplitude=1},draw=alert_color,ultra thick]
         \draw [decorate] (backend.north) -- (db.center) ;
       \end{scope}
     \end{tikzpicture}

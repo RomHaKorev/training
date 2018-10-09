@@ -1,0 +1,7 @@
+- tactical DDD
+- micro service vs monolith
+- calisthenic
+- oop / fp / ...
+- living documentation
+- tests fonctionnels / e2e / gherking
+- clean code

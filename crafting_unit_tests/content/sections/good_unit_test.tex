@@ -150,8 +150,29 @@
 
 \subsection{Verifiability}
 
+\begin{frame}{Custom assertions}
+  Remove duplicated assertion logic by creating your own Assertion Methods
+  \begin{itemize}
+    \item \alert{Improve readability}: Intent-revealing methods that verify expected outcome
+    \item \alert{Simplify troubleshooting}: Make failure easier to understand
+    \item \alert{Define test-specific equality}: Ignore “don’t care” fields when comparing objects
+  \end{itemize}
+\end{frame}
 
-\subsection{Maintenability}
+
+\begin{frame}{Challengable}
+
+  Tests can be challenged by modifying test code :
+
+  \begin{itemize}
+    \item What if i change this input ?
+    \item What if i change this output ?
+    \item What if i change this call ?
+  \end{itemize}
+
+  \center\sticker{\alert{\Large{Test should fail}}}
+
+\end{frame}
 
 
 \subsection{Test Driven Development}

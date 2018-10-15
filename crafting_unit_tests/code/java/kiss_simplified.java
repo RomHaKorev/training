@@ -11,14 +11,6 @@ public void a_player_invite_the_opponent_to_pick_a_card_when_he_does_not_have_th
 
    given_player_1_has().card("Martin Robert").card("Martin Andrée").card("Martin Didier").card("Garcia Juan").card("Garcia Lucia").card("Garcia Pedro");
    given_player_2_has().card("Murphy Eddie").card("Murphy Elizabeth").card("Murphy John").card("Miller Thomas").card("Miller Eva").card("Miller Andrea");
-   deck_is_composed_by()
-           .card("Martin Isabelle").card("Martin Kevin").card("Martin Kevina")
-           .card("García Maria").card("García Pablo").card("García Lisa")
-           .card("Murphy Abbie").card("Murphy Brandon").card("Murphy Brenda")
-           .card("Miller Alexandra").card("Miller Claud").card("Miller Anna")
-           .card("Smith Adam").card("Smith Ava").card("Smith Donald").card("Smith Michell").card("Smith Steven").card("Smith Scarlett")
-           .card("Rossi Antonio").card("Rossi Alessandra").card("Rossi Luigi").card("Rossi Isabella").card("Rossi Mario").card("Rossi Maria")
-           .card("Silva Manuel").card("Silva Louisa").card("Silva Joao").card("Silva Andreia").card("Silva Luis").card("Silva Lucia");
 
    when_player_1_ask_for("Rossi Antonio");
 

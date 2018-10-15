@@ -30,6 +30,25 @@
 % }
 
 
+\newcommand{\goodbad}[1]{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0] (image) at (current page.center) {
+      \includegraphics[width=\paperwidth]{images/good_hunter}
+    };
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+      \node[
+        ellipse callout,
+        fill=gray!50,
+        callout absolute pointer={(0.55,0.80)},
+        text width=3cm,
+        align=flush center,
+        node font=\tiny,
+        minimum height=1em] at (0.32,1) {#1};
+    \end{scope}
+  \end{tikzpicture}
+}
+
+
 \input{content/pyramid.tex}
 \input{content/system.tex}
 
@@ -54,9 +73,7 @@
 \section{Good practices}
 
 \begin{frame}
-  \singleimage{images/good_hunter}
-
-  There are good tests and bad tests
+  \goodbad{There are good tests and bad tests}
 \end{frame}
 
 

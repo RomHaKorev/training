@@ -1,34 +1,38 @@
-\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
-   Did you change the rule the failing test verify ?
-
-   \sample{testcode_fragile}
-
-   You will change test code.
-\end{frame}
+\section{Test is failing}
 
 
-\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
-   Did you change the rule the failing test verify ?
-
-   \sample{testcode_stable}
-
-   You will change production code.
-\end{frame}
-
-
-\begin{frame}[fragile]{When a test is failing - Change production or test code ?}
+\begin{frame}[fragile]{When a test is failing - Regression or new rule ?}
   \begin{itemize}
-    \item The new rule is \alert{changing} the tested \alert{behavior}
+    \item A new rule is \alert{changing} the tested \alert{behavior}
     \begin{itemize}
-      \item [=>] You have to \alert{change test code}
+      \item [=>] You have to \alert{adapt the test}
     \end{itemize}
     \item The broken behavior is \alert{still relevant}
     \begin{itemize}
-      \item [=>] You need to keep this behavior by \alert{fixing production / test code}
+      \item [=>] You need to keep this behavior by \alert{fixing production or test code}
     \end{itemize}
     \item Any doubt ?
     \begin{itemize}
       \item [=>] \alert{Share} with “domain experts”
     \end{itemize}
   \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{When a test is failing - Regression or new rule ?}
+   Did you change the rule the failing test verify ?
+
+   \sample{testcode_fragile}
+
+   It's difficult to see if it's a regression or a new rule.
+   \alert{You will be tempted to change the test.}
+\end{frame}
+
+
+\begin{frame}[fragile]{When a test is failing - Regression or new rule ?}
+   Did you change the rule the failing test verify ?
+
+   \sample{testcode_stable}
+
+   It's easier to understand the impact.
 \end{frame}

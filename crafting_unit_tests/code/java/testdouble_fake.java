@@ -17,4 +17,6 @@ class FakeRateProvider implements RateProvider {
 
 // --------------
 
-assertEqual(newMoney(USD, 15), newMoney(EUR, 10).changeTo(USD, new FakeRateProvider().rate(EUR, USD, 1.5)))
+assertEqual(newMoney(USD, 15), newMoney(EUR, 10).changeTo(
+  USD,
+  new FakeRateProvider().rate(EUR, USD, 1.5)))

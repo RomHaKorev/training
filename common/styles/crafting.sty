@@ -86,7 +86,7 @@
 
 \newcommand{\sticker}[2][5]{%
     \tikz[baseline=(tocancel.base)]{
-        \node[inner sep=0pt,outer sep=0pt,rotate=#1] (tocancel) {#2};
+        \node[inner sep=5pt,outer sep=0pt,rotate=#1,rectangle, draw] (tocancel) {#2};
     }
 }
 

@@ -1,145 +1,48 @@
-\newcommand{\withmedal}[1]{
-  \center{ \Large #1} \\[5mm]
-  \hfill \includegraphics[width=1.5cm]{images/medal}
-}
-
 
 \section{Why are we unit testing ?}
 
 
-
 \begin{frame}{Our daily work is about \alert{learning the business}}
-    Explain with business rules
-    \begin{itemize}
-      \item May be Ambiguous / not clear
-      \item May be Contradictory
-      \item \cancelsnake{May} will change
-    \end{itemize}
+  \begin{center}
+    \alert {\LARGE{Captures the understanding of business rules}}
+
+    Development is a learning process, we learn the business rules wich may be ambiguous or contradictory, and \cancel{may} will change.
+  \end{center}
 \end{frame}
-
-
-
-
-\subsection{To be able to change}
-
-
-
-
-\begin{frame}
-  \begin{itemize}
-    \item Invites a modular design
-    \item Make it possible to change
-  \end{itemize}
-\end{frame}
-
-
-\subsection{To make behaviors sharable / readable}
-
-
-\begin{frame}
-  \begin{itemize}
-    \item Development is a learning process, test can catch this learning
-    \item Test can explain the usage / busniess rules
-  \end{itemize}
-\end{frame}
-
-
-\subsection{To keep control}
-
-
-\begin{frame}
-  \begin{itemize}
-    \item Provide quick feedback
-    \item Help to improve quality
-  \end{itemize}
-\end{frame}
-
-
 
 
 \begin{frame}{Our daily work is about \alert{keeping control}}
+  \begin{center}
+    \alert {\LARGE{Modular and decoupled design}}
+
+    To be testable, it is necessary to inverse the dependencies and keep things small.
+  \end{center}
 \end{frame}
 
 
-\begin{frame}{Our daily work is about \alert{creating value}}
-  \begin{enumerate}
-    \item Driven by the domain
-    \item Alive
-    \item Scalable
-    \item Explain with business rules
-    \begin{itemize}
-      \item May be Ambiguous / not clear
-      \item May be Contradictory
-      \item \cancelsnake{May} will change
-    \end{itemize}
-  \end{enumerate}
+\begin{frame}{Our daily work is about \alert{keeping control}}
+  \begin{center}
+    \alert {\LARGE{Allows evolutions}}
 
-  \note{
-    Scalable -> évolutive. Le point important est que notre appli doit être évolutive.
-  }
+    An unit tests suite can easily and quickly show regression or impact of changes.
+  \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \singlequote{A genious}{Never change A RUNNING SYSTEM !!!}
-\end{frame}
+\begin{frame}{Our daily work is about \alert{keeping control}}
+  \begin{center}
+    \alert {\LARGE{Provides quick feedback}}
 
-\begin{frame}
-
-  \punchline{}{
-  \tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[height=\paperheight]{images/brucelee}};
-
-  \huge{BE WATER MY FRIEND !}
-  }
-
+    An unit tests suite is quicker than other tests.
+  \end{center}
 \end{frame}
 
 
-\begin{frame}
-  \singlequote{Stephen Hawking}{ Intelligence is the ability to adapt to changes. }
-\end{frame}
-
-
-\begin{frame}
-  \withmedal{To be able to change}
-\end{frame}
-
-
-\begin{frame}{Our daily work is about \alert{writing code}}
-  \begin{enumerate}
-    \item Driven by the domain
-    \item Alive
-    \item Scalable
-    \item Testable
-    \item Always working
-  \end{enumerate}
-\end{frame}
-
-
-\begin{frame}{Adding a feature}
-  \begin{enumerate}
-    \item Write a failing test
-    \item Make this test passed
-    \item Refactor
-    \item Ensure you did not broke anything by executing tests
-  \end{enumerate}
-\end{frame}
-
-
-\begin{frame}
-  \withmedal{To always be working by being testable}
-\end{frame}
-
-
-\begin{frame}{Our daily work is about \alert{documenting}}
-  \begin{enumerate}
-    \item Driven by the domain
-    \item Explicit things
-    \item Helper to take good decisions
-  \end{enumerate}
-\end{frame}
-
-
-\begin{frame}
-  \withmedal{To make behaviors sharable / readable}
+\begin{frame}{Summary}
+  \begin{itemize}
+    \item To be able to change
+    \item To always have a working software
+    \item To make behaviors sharable and readable
+  \end{itemize}
+  \only<2>{\center\sticker{\alert{\Huge{To be agile}}}}
 \end{frame}

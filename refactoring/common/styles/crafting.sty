@@ -1,0 +1,124 @@
+\ProvidesFile{crafting}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[no-math]{fontspec}
+\usepackage{fp}
+\usepackage{pgfpages}
+
+
+% == beamer configuration
+\usetheme[progressbar=foot,background=light,sectionpage=progressbar,subsectionpage=progressbar]{metropolis}
+
+\newfontfamily\PermanentMarker[Path=./common/fonts/,UprightFont = *-Regular]{PermanentMarker}
+\newfontfamily\Sedgwick[Path=./common/fonts/,UprightFont = *-Regular]{SedgwickAveDisplay}
+
+\setsansfont[Path=./common/fonts/,UprightFont = *-Regular]{PermanentMarker}
+
+\setbeamerfont{title}{size=\huge, series=\Sedgwick}
+\setbeamerfont*{subtitle}{size=\large, series=\Sedgwick}
+\definecolor{subtitle_color}{RGB}{173,173,173}
+\setbeamercolor{subtitle}{fg=subtitle_color}
+
+
+
+\definecolor{alert_color}{RGB}{209,130,112}
+\setbeamercolor{alerted text}{fg=alert_color}
+\setbeamertemplate{frame footer}{\includegraphics[height=0.15cm]{common/images/by-sa}}
+\subtitle{a step to be a craftsman}
+\date{}
+
+%\usetheme{Copenhagen}
+%\usecolortheme{fly}
+
+% == tikz configuration
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  decorations.pathmorphing,
+  fit,
+  positioning,
+  shadows,
+  shapes.callouts,
+  shapes.geometric,
+  shapes.symbols,
+}
+
+
+% == minted configuration
+\usepackage{minted}
+
+\newcommand{\usejava}{
+  \newcommand{\samplelanguage}{java}
+  \newcommand{\samplepath}{java}
+  \newcommand{\sampleext}{java}
+}
+
+\newcommand{\usepython}{
+  \newcommand{\samplelanguage}{python}
+  \newcommand{\samplepath}{python}
+  \newcommand{\sampleext}{py}
+}
+
+\newcommand\sample[2][6]{
+  \inputminted[mathescape, autogobble, linenos, fontsize=\fontsize{#1}{#1}\selectfont, frame=single]{\samplelanguage}{code/\samplepath/#2.\sampleext}
+}
+
+
+% == custom macros
+
+\newcommand\twocolumns[3][0.5]{
+  \FPeval{\leftsize}{#1}
+  \FPeval{\rightsize}{1 - #1}
+  \begin{columns}
+    \begin{column}{\leftsize\textwidth}
+      #2
+    \end{column}
+    \begin{column}{\rightsize\textwidth}
+      #3
+    \end{column}
+  \end{columns}
+}
+
+\newcommand{\singleimage}[2][\textwidth]{ \center \includegraphics[width=#1]{#2} }
+\newcommand{\singletext}[1]{ \center{ \Large #1} }
+
+\newcommand{\sticker}[2][5]{%
+    \tikz[baseline=(tocancel.base)]{
+        \node[inner sep=5pt,outer sep=0pt,rotate=#1,rectangle, draw] (tocancel) {#2};
+    }
+}
+
+\newcommand{\cancel}[1]{%
+    \tikz[baseline=(tocancel.base)]{
+        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+        \draw[alert_color,thick,line cap=round] (tocancel.south west) -- (tocancel.north east);
+        \draw[alert_color,thick,line cap=round] (tocancel.north west) -- (tocancel.south east);
+    }
+}
+
+\newcommand{\cancelsnake}[1]{%
+    \tikz[baseline=(tocancel.base),decoration={snake,amplitude=1},draw=alert_color,thick]{
+        \node[inner sep=0pt,outer sep=0pt] (tocancel) {#1};
+        \draw[decorate] (tocancel.west) -- (tocancel.east);
+    }
+}
+
+\newcommand{\singlequote}[2]{%
+  \begin{quote}{\includegraphics[width=0.8cm]{common/images/quote}}
+    #2
+    \begin{flushright}
+      \tiny{---#1}
+    \end{flushright}
+  \end{quote}
+}
+
+\newcommand{\punchline}[2]{%
+  \begin{quote}{\includegraphics[width=0.8cm]{common/images/quote}}
+    #2
+    \begin{flushright}
+      \tiny{---#1}
+    \end{flushright}
+  \end{quote}
+}

@@ -1,0 +1,29 @@
+\newcommand\cadre{
+  \begin{scope}
+    \fill[white,draw=gray!20!white, very thin] (-2, -0.5) rectangle (8, 6.5);
+  \end{scope}
+}
+
+\newcommand\etoepart{
+  \begin{scope}
+    \clip (0, 4) rectangle (6, 6);
+    \fill[gray!20!white] (0,0) -- (6,0) -- (3,6) -- cycle;
+    \node (etoe) at (3,4.5) {E2E};
+  \end{scope}
+}
+
+\newcommand\integpart{
+  \begin{scope}
+    \clip (0, 2) rectangle (6,3.8);
+    \fill[gray!20!white] (0,0) -- (6,0) -- (3,6) -- cycle;
+    \node (integ) at (3,2.5) {Integration};
+  \end{scope}
+}
+
+\newcommand\unitpart{
+  \begin{scope}
+    \clip (0, 0) rectangle (6,1.8);
+    \fill[gray!20!white] (0,0) -- (6,0) -- (3,6) -- cycle;
+    \node (unit) at (3,0.5) {Unit};
+  \end{scope}
+}
